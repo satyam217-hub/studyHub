@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Grid Layout</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .custom-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 10px;
+        width: 80%;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .box {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #000;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .image {
+        width: 80%;
+        height: auto;
+        border-radius: 50%;
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 50%;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .content h3 {
+        color: red;
+        margin-bottom: 10px;
+      }
+
+      .content p {
+        color: gray;
+      }
+
+      .content a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .pdf-link {
+        color: blue;
+        text-decoration: underline;
+      }
+
+      .read-more {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .read-more a {
+        display: inline-block;
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 25px;
+      }
+
+      .read-more a:hover {
+        background-color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="custom-grid">
+      <div class="box">
+        <a
+          href="https://www.youtube.com/watch?v=5UEqPhoySzA&list=PLzLrd_rMe134Q69sPy6lCx3uo8GDXh1X2"
+          target="_blank"
+        >
+          <img src="/mnt/data/image.png" alt="Avatar" class="image" />
+          <div class="overlay">Watch Avatar</div>
+        </a>
+      </div>
+      <div class="box">
+        <a
+          href="https://www.youtube.com/watch?v=5UEqPhoySzA&list=PLzLrd_rMe134Q69sPy6lCx3uo8GDXh1X2"
+          target="_blank"
+        >
+          <img src="/mnt/data/image.png" alt="Summary" class="image" />
+          <div class="overlay">Watch Summary</div>
+        </a>
+      </div>
+      <div class="box content">
+        <a href="https://example.com/content-article" target="_blank">
+          <h3>AI transforms advertising industry Dynamics</h3>
+          <p>
+            Summary - This tech thought leadership article delves into the
+            realm...
+          </p>
+        </a>
+      </div>
+      <div class="box">
+        <a
+          href="https://example.com/document.pdf"
+          target="_blank"
+          class="pdf-link"
+          >Download PDF</a
+        >
+      </div>
+    </div>
+    <div class="read-more">
+      <a href="https://example.com/more" target="_blank">Read More</a>
+    </div>
+  </body>
+</html>
